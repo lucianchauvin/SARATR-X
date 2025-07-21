@@ -5,7 +5,7 @@ from functools import partial
 from timm.models.vision_transformer import trunc_normal_
 from .masked_autoencoder import MaskedAutoencoder
 from .models_hivit import HiViT, PatchEmbed, PatchMerge, BlockWithRPE
-from util.pos_embed import get_2d_sincos_pos_embed
+from ..util.pos_embed import get_2d_sincos_pos_embed
 import numpy as np
 import torch.nn.functional as F
 
