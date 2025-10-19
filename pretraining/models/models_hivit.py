@@ -152,8 +152,11 @@ class HiViT(nn.Module):
         self.mlp_ratio = mlp_ratio
         self.use_checkpoint = use_checkpoint
         self.num_main_blocks = depths[-1]
+        self.has_class_token = False
+        self.pos_embed = None
 
         embed_dim = embed_dim // 2 ** (self.num_layers - 1)
+        self.embed_dim = embed_dim
         # split image into non-overlapping patches
         self.patch_embed = PatchEmbed(
             img_size=img_size, patch_size=patch_size, in_chans=in_chans, embed_dim=embed_dim,
